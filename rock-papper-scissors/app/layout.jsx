@@ -1,4 +1,5 @@
 import './globals.css'
+import { PAPPER_END, PAPPER_START, ROCK_END, ROCK_START, SCISSORS_START, SCISSORS_END, LIZARD_START, LIZARD_END, SPOCK_START, SPOCK_END } from './info'
 
 export const metadata = {
   title: 'Create Next App',
@@ -6,6 +7,9 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
+
+  const carga = [ROCK_START, ROCK_END, PAPPER_START, PAPPER_END, SCISSORS_START, SCISSORS_END, LIZARD_START, LIZARD_END, SPOCK_START, SPOCK_END]
+
   return (
     <html lang="en">
       <body>{children}</body>

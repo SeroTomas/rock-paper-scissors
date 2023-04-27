@@ -1,4 +1,4 @@
-/** @type {import('tailwindcss').Config} */
+/**  @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./app/**/*.{js,ts,jsx,tsx}"],
   theme: {
@@ -11,14 +11,14 @@ module.exports = {
         //Primary colors
         'scissorsStart': '#ec9e0e',
         'scissorsEnd': '#eca922',
-        'paperStart': '#4865f4',
-        'paperEnd': '#5671f5',
+        'papperStart': '#4865f4',
+        'papperEnd': '#5671f5',
         'rockStart': '#dc2e4e',
         'rockEnd': '#dd405d',
         'lizardStart': '#834fe3',
         'lizardEnd': '#8c5de5',
-        'cianStart': '#40b9ce',
-        'cianEnd': '#52bed1',
+        'spockStart': '#40b9ce',
+        'spockEnd': '#52bed1',
 
         //Nesutra colors
 

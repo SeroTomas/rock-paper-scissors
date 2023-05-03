@@ -65,3 +65,21 @@ export const selectableBonus = {
         }
     }
 }
+
+export const normalTable = {
+    rock: {
+        scissors: "WIN",
+        papper: "LOOSE",
+        rock: "TIE"
+    },
+    scissors: {
+        papper: "WIN",
+        rock: "LOOSE",
+        scissors: "TIE"
+    },
+    papper: {
+        rock: "WIN",
+        scissors: "LOOSE",
+        papper: "TIE"
+    }
+}

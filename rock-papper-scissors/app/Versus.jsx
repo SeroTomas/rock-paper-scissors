@@ -1,57 +1,11 @@
 "use client"
-import React, { useState, useEffect } from 'react'
+import React, { useEffect} from 'react'
 
-//auxiliares
-import { selectableNormal } from './info'
 //componentes
 import Option from './Option'
 
-const randomChoose = () => {
-    const randomIndex = Math.floor(Math.random() * selectableNormal.length);
-    const randomElement = selectableNormal[randomIndex];
-    return randomElement
-}
-
-const resolve = (option, random) => {
-    const user = option?.name;
-    const bot = random?.name
-
-    const table = {
-        rock: {
-            scissors: "WIN",
-            papper: "LOOSE",
-            rock: "TIE"
-        },
-        scissors: {
-            papper: "WIN",
-            rock: "LOOSE",
-            scissors: "TIE"
-        },
-        papper: {
-            rock: "WIN",
-            scissors: "LOOSE",
-            papper: "TIE"
-        }
-    }
-    const result = table[user][bot];
-    return result;
-}
-
-const Versus = ({ option, setOption, setScore, score }) => {
-
-    const [random, setRandom] = useState(null);
-    const [result, setResult] = useState(null);
-
-    useEffect(() => {
-        setRandom(randomChoose())
-    }, [])
-
-    useEffect(() => {
-
-        result === "WIN" ? setScore(score + 1) : setScore(score)
-
-    }, [random])
-
+const Versus = ({ option, random, result, handleDelete, handleScore}) => {
+    
     return (
         <div className=' h-2/4  mx-8 flex flex-col justify-center gap-10'>
             <div className='flex items-center justify-between'>
@@ -82,7 +36,7 @@ const Versus = ({ option, setOption, setScore, score }) => {
                 <h1>THE MATCH END, YOU {result}!</h1>
             </div>
             <div>
-                <button onClick={() => { setOption(null) }}>
+                <button onClick={() => { handleDelete() }}>
                     Restart
                 </button>
             </div>

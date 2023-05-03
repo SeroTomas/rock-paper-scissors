@@ -7,21 +7,23 @@ import Choose from "./Choose";
 import Versus from "../Versus";
 
 //hooks
-import { useState } from "react";
 import Rules from "./Rules";
+import useResult from "../../hooks/useResult";
 
-function Normal() {
+//auxiliares
+import { selectableNormal, normalTable } from "../info";
 
+function Normal () {
 
-    const [score, setScore] = useState(0);
-    const [option, setOption] = useState(null);
-
+    const {option, score, result, random, setScore,setOption, handleDelete, handleScore} = useResult(selectableNormal, normalTable);
+    
+    
     return (
         <>
             <div className="flex flex-col font-fuente bg-gradient-to-b from-bg-start to-bg-end h-screen relative">
                 <ScoreBoard logo={logo} score={score} />
                 {
-                    option ? <Versus option={option} setScore={setScore} score={score} setOption={setOption}/> : <Choose setOption={setOption}/>
+                    option ? <Versus option={option} random ={random} setOption={setOption} result= {result} handleDelete={handleDelete} handleScore={handleScore}/> : <Choose setOption={setOption}/>
                 }
                 <Rules ruleImage={rule} />
             </div>
